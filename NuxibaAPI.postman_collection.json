@@ -1,0 +1,143 @@
+{
+	"info": {
+		"_postman_id": "5b2da7c0-f88a-4688-81de-259191b23192",
+		"name": "NuxibaAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42926399"
+	},
+	"item": [
+		{
+			"name": "GetLogins",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7255/api/Logins",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7255",
+					"path": [
+						"api",
+						"Logins"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetReport",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7255/api/Reports/csv",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7255",
+					"path": [
+						"api",
+						"Reports",
+						"csv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostLogin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"user_id\": 1,\r\n  \"extension\": 0,\r\n  \"tipoMov\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7255/api/Logins",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7255",
+					"path": [
+						"api",
+						"Logins"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutLogin",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"tipoMov\": 0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7255/api/Logins/:userID",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7255",
+					"path": [
+						"api",
+						"Logins",
+						":userID"
+					],
+					"variable": [
+						{
+							"key": "userID",
+							"value": "453534"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteLogin",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:7255/api/Logins/:userId",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7255",
+					"path": [
+						"api",
+						"Logins",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "999"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
