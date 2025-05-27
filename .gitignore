@@ -48,3 +48,7 @@ Thumbs.db
 *.mov
 *.wmv
 
+/.vs
+/NuxibaAPI/.vs/NuxibaAPI
+/NuxibaAPI/bin/Debug/net8.0
+/NuxibaAPI/obj
