@@ -146,3 +146,28 @@ Trabaja en SQL Server y realiza las siguientes consultas basadas en la tabla `cc
 ---
 
 Este examen evalúa tu capacidad para desarrollar APIs RESTful, realizar consultas avanzadas en SQL Server y generar reportes en formato CSV. Se valorará la organización del código, las mejores prácticas y cualquier documentación adicional que proporciones.
+
+**Instrucciones de lo desarrollado**
+
+**Levantar el contenedor de SQL Server**
+Para levantar el contenedor de SQL Server se utilizo docker y con ayuda del cli de docker ejecutamos el comando proporcionado para levantar la imagen de SQL server en el contenedor.
+docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=YourStrong!Passw0rd' -p 1433:1433 --name sqlserver -d mcr.microsoft.com/mssql/server:2019-latest
+
+**Conectar la Base de Datos**
+Para conectar la base de datos se descargo la herramienta Azure Data Studio, se hizo la conexion nueva utilizando la interfaz grafica proporcionada por azure una vez que el contenedor ya 
+estuviera corriendo, se utilizo el servidor localhost con la contrasenia configurada anteriormente. 
+Se creo tanto la base de datos como las tablas con ayuda de Entity Framework y la cadena de conexion proporcinada en el appsettings.json
+"DefaultConnection": "Server=localhost,1433;Database=NuxibaDB;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=True;"
+El nombre de la base de datos fue NuxibaDB
+Es necesario ejecutar las migraciones con los sig comandos
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+
+**Ejecutar la API y sus endpoints**
+Una vez ejecutadas las migraciones procedemos a ejecutar el proyecto desde Visual Studio, esto nos abre un navegador en donde podemos visualizar la documentacion de Swagger con los endpoints programados
+adicional a esto, se adjunta una coleccion de postman con las apis, el host puede cambiar dependiendo la maquina, revisar en que puerto se instancia el api
+
+**Descargar el CSV**
+Para descargar el csv se hizo un endpoint /api/Reports/csv a traves de un get desde postman se podria descargar.
+
+No logre terminar el ejercicio 2: Consultas SQL y Optimización por falta de tiempo
